@@ -190,7 +190,7 @@ So a simple event handle could just assoc what we need into the database.
   (assoc-in tx-env [:db ident :completed?] checked))
 ```
 
-Once the event completes the transaction it sees that only `ident` was updated. It'll then check which queries used that `ident` when rendering and signal that they need to be updated.
+Once the event completes, the transaction sees that `ident` was updated. It'll then check which queries used that ident, when rendering, and signal that they need to be updated.
 
 The scheduler coordinates that everything updates in the proper order and any potential changes are propagated to the actual live DOM.
 
